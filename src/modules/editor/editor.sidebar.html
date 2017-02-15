@@ -1,7 +1,7 @@
 <div id="navigation" style="margin-top: -1px">
 	<div class="hpanel">
 		<div class="panel-heading hbuilt">
-			<div panel-tools=""></div>
+			<div panel-tools hide-close="true"></div>
 			Window Property
 		</div>
 		<div class="panel-body">
@@ -14,8 +14,12 @@
 				<label>Height</label>
 				<input type="number" class="form-control" ng-change="editor.updateSize()" ng-model="editor.rect.height">
 			</div>
+
+			<div class="col-md-12">
+				<button class="btn btn-primary" ng-click="app_util.editor.showAddElement(editor)" style="width: 100%">Add Element</button>
+			</div>
 		</div>
 	</div>
 
-	<rc-elements-list editor="editor" elements="editor.childs"></rc-elements-list>
+	<rc-elements-list editor="editor" parent="editor"></rc-elements-list>
 </div>

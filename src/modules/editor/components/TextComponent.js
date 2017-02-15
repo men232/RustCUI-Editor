@@ -5,6 +5,7 @@ class TextComponent extends BaseCompontent {
 		super();
 
 		this.type     = 'UnityEngine.UI.Text';
+		this.typeShort= 'Text';
 		this.text     = 'Text';
 		this.fontSize = 14;
 		this.font     = 'RobotoCondensed-Bold.ttf';

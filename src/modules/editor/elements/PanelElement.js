@@ -6,6 +6,7 @@ class PanelElement extends BaseElement {
 		super(opts);
 
 		this.parent = 'Hud';
+		this.title  = 'PanelElement';
 		this.components = [
 			new RawImageComponent()
 		];

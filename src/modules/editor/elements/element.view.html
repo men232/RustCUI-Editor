@@ -1,3 +1,7 @@
+<div class="col-md-12">
+	<button class="btn btn-sm btn-primary" ng-click="util.showAddElement(element)" style="width: 100%">Add Child Element</button>
+</div>
+
 <!-- Position -->
 <div class="form-group form-group-sm col-md-6">
 	<label>X</label>
@@ -34,8 +38,8 @@
 
 	<div class="hpanel" ng-repeat="component in element.components">
 		<div class="panel-heading hbuilt">
-			<div panel-tools=""></div>
-			{{ component.typeShort }}
+			<div panel-tools on-close="element.removeComponent($index)"></div>
+			{{ component.type }}
 		</div>
 		<div class="panel-body">
 			<rc-component editor="editor" component="component"></rc-component>
@@ -46,5 +50,5 @@
 <!-- Childs -->
 <div ng-if="element.childs.length">
 	<h5>Childs</h5>
-	<rc-elements-list editor="editor" elements="element.childs"></rc-elements-list>
+	<rc-elements-list editor="editor" parent="element"></rc-elements-list>
 </div>

@@ -6,6 +6,7 @@ class LabelElement extends BaseElement {
 		super(opts);
 
 		this.parent = 'Hud';
+		this.title  = 'LabelElement';
 		this.components = [
 			new TextComponent()
 		];

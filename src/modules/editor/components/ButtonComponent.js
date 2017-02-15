@@ -5,6 +5,7 @@ class ButtonComponent extends BaseCompontent {
 		super();
 
 		this.type      = 'UnityEngine.UI.Button';
+		this.typeShort = 'Button';
 		this.command   = '';
 		this.close     = '';
 		this.sprite    = 'Assets/Content/UI/UI.Background.Tile.psd';

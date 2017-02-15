@@ -1,4 +1,3 @@
-import PanelElement from './elements/PanelElement';
 import RectTransformComponent from './components/RectTransformComponent';
 
 class Editor {
@@ -12,20 +11,7 @@ class Editor {
 			width: 1280,
 			height: 720
 		});
-		this.childs = [
-			new PanelElement({
-				x: 5,
-				y: 5,
-				width: 250,
-				height: 250
-			}),
-			new PanelElement({
-				x: 350,
-				y: 15,
-				width: 75,
-				height: 75
-			}, this.rect)
-		];
+		this.childs = [];
 
 		this.container.resizable({
 			resize: (event, ui) => {
@@ -33,17 +19,15 @@ class Editor {
 			}
 		});
 
-		let p = new PanelElement({
-			x: 5,
-			y: 5,
-			width: 75,
-			height: 75
-		}, this.childs[0].rect);
-
-		p.components[0].color[0] = 0;
-		this.childs[0].childs.push(p);
-
 		this.updateSize(this.rect.width, this.rect.height);
+	}
+
+	removeChild(index) {
+		if (!this.childs[index]) return;
+
+		this.childs[index].dispose();
+		this.childs.splice(index, 1);
+		this.update();
 	}
 
 	updateSize(width = this.rect.width, height = this.rect.height) {

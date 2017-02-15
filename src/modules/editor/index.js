@@ -1,7 +1,13 @@
+import APP_UTIL from '../../app.util';
+
 import './editor.less';
-import './element.directive';
-import './component.directive';
+import './elements/element.directive';
+import './components/component.directive';
 import * as controller from './editor.controller';
+import * as util from './editor.util';
+
+// Register new util lib
+APP_UTIL.editor = util;
 
 angular
 	.module('app')
@@ -17,9 +23,10 @@ function fn($stateProvider) {
 				return $q((resolve) => {
 					require.ensure([], () =>  {
 						$templateCache.put('editor.sidebar.html', require('./editor.sidebar.html'));
-						$templateCache.put('element.view.html', require('./element.view.html'));
-						$templateCache.put('elements.list.html', require('./elements.list.html'));
-						$templateCache.put('component.view.html', require('./component.view.html'));
+						$templateCache.put('element.view.html', require('./elements/element.view.html'));
+						$templateCache.put('element.new.html', require('./elements/element.new.html'));
+						$templateCache.put('elements.list.html', require('./elements/elements.list.html'));
+						$templateCache.put('component.view.html', require('./components/component.view.html'));
 
 						// resizable
 						require('jquery-ui/ui/widgets/resizable');

@@ -1,3 +1,5 @@
+import * as util from '../editor.util';
+
 angular
 	.module('app')
 	.directive('rcElement', rcElement)
@@ -6,6 +8,7 @@ angular
 function rcElement() {
 	/*@ngInject*/
 	const controller = function ($scope) {
+		$scope.util = util;
 		$scope.onChange = () => {
 			$scope.element.update();
 		};
@@ -28,7 +31,7 @@ function rcElementsList() {
 		templateUrl: 'elements.list.html',
 		scope: {
 			editor: '=',
-			elements: '='
+			parent: '='
 		}
 	};
 }

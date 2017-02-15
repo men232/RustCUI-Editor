@@ -123,12 +123,13 @@ function panelTools($timeout) {
 	return {
 		restrict: 'A',
 		scope: {
-			onClose: '='
+			onClose: '&',
+			hideClose: "="
 		},
 		template: `
 			<div class="panel-tools">
 				<a ng-click="showhide()"><i class="fa fa-chevron-up"></i></a>
-				<a ng-if="onClose" ng-click="closebox()"><i class="fa fa-times"></i></a>
+				<a ng-if="!hideClose" ng-click="closebox()"><i class="fa fa-times"></i></a>
 			</div>
 		`,
 		controller: function($scope, $element) {

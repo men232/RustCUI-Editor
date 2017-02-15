@@ -1,5 +1,5 @@
 # RustCUI-Editor
-Web editor for cui of rust game.
+Web editor for cui of rust game. Project still develop and not usable.
 
 ### Deps
 Need for webpack & webpack-dev-server installed as global

@@ -39,6 +39,12 @@ class BaseCompontent {
 		});
 	}
 
+	dispose() {
+		if (this.svg.init) {
+			this.svg.elem.remove();
+		}
+	}
+
 	getRect() {
 		return this.element.rect;
 	}

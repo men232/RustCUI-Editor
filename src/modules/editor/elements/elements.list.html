@@ -1,0 +1,9 @@
+<div class="hpanel" ng-repeat="element in parent.childs">
+	<div class="panel-heading hbuilt">
+		<div panel-tools on-close="parent.removeChild($index)"></div>
+		{{ element.name }} ({{ element.title }})
+	</div>
+	<div class="panel-body">
+		<rc-element editor="editor" element="element"></rc-element>
+	</div>
+</div>
