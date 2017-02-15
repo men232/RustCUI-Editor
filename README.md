@@ -14,8 +14,8 @@ Need for webpack & webpack-dev-server install as global
 `webpack-dev-server`
 
 ### Build
-Default build result in: ```./dist```
 `webpack`
+Build result in: `./dist`<br>
 
 And open in browser
 `http://localhost:1337/editor`
