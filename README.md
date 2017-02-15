@@ -4,7 +4,7 @@ Web editor for cui of rust game.
 ### Deps
 Need for webpack & webpack-dev-server install as global
 
-`sudo npm i webpack -g`
+`sudo npm i webpack -g`<br />
 `sudo npm i webpac-dev-server -g`
 
 ### Installation
@@ -15,7 +15,7 @@ Need for webpack & webpack-dev-server install as global
 
 ### Build
 `webpack`
-Build result in: `./dist`<br>
+Build result in: `./dist`<br />
 
 And open in browser
 `http://localhost:1337/editor`
