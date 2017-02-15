@@ -1,0 +1,15 @@
+<!-- Header -->
+<div id="header" ng-include="'header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="$state.current.data.sidebarPath"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+    <div class="content">
+        <div ui-view></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" ng-include="'footer.html'"></footer>
+</div>

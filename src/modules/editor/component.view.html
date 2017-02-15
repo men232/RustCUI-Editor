@@ -1,0 +1,30 @@
+<!-- Color -->
+<div ng-if="component.color">
+	<div class="form-group form-group-sm col-md-12">
+		<label>Red</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="component.color[0]">
+	</div>
+
+	<div class="form-group form-group-sm col-md-12">
+		<label>Green</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="component.color[1]">
+	</div>
+
+	<div class="form-group form-group-sm col-md-12">
+		<label>Blue</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="component.color[2]">
+	</div>
+
+	<div class="form-group form-group-sm col-md-12">
+		<label>Alpha</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="component.color[3]">
+	</div>
+</div>
+
+<!-- RawImage -->
+<div ng-if="component.typeShort == 'RawImage'">
+	<div class="form-group form-group-sm col-md-12">
+		<label>Image(URL)</label>
+		<input type="string" class="form-control" ng-change="onChange()" ng-model="component.url">
+	</div>
+</div>

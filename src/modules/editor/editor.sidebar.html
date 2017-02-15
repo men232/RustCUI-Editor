@@ -1,0 +1,21 @@
+<div id="navigation" style="margin-top: -1px">
+	<div class="hpanel">
+		<div class="panel-heading hbuilt">
+			<div panel-tools=""></div>
+			Window Property
+		</div>
+		<div class="panel-body">
+			<div class="form-group form-group-sm col-md-6">
+				<label>Width</label>
+				<input type="number" class="form-control" ng-change="editor.updateSize()" ng-model="editor.rect.width">
+			</div>
+
+			<div class="form-group form-group-sm col-md-6">
+				<label>Height</label>
+				<input type="number" class="form-control" ng-change="editor.updateSize()" ng-model="editor.rect.height">
+			</div>
+		</div>
+	</div>
+
+	<rc-elements-list editor="editor" elements="editor.childs"></rc-elements-list>
+</div>

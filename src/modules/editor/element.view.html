@@ -1,0 +1,50 @@
+<!-- Position -->
+<div class="form-group form-group-sm col-md-6">
+	<label>X</label>
+	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.x">
+</div>
+
+<div class="form-group form-group-sm col-md-6">
+	<label>Y</label>
+	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.y">
+</div>
+
+<!-- Size -->
+<div class="form-group form-group-sm col-md-6">
+	<label>Width</label>
+	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.width">
+</div>
+
+<div class="form-group form-group-sm col-md-6">
+	<label>Height</label>
+	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.height">
+</div>
+
+<!-- Anchor -->
+<div class="col-md-6 m-b-md">
+	<b>AnchorMin:</b><br>{{ element.rect.anchormin[0] }}, {{ element.rect.anchormin[1] }}
+</div>
+<div class="col-md-6 m-b-md">
+	<b>AnchorMax:</b><br>{{ element.rect.anchormax[0] }}, {{ element.rect.anchormax[1] }}
+</div>
+
+<!-- Components -->
+<div>
+	<h5>Components</h5>
+
+	<div class="hpanel" ng-repeat="component in element.components">
+		<div class="panel-heading hbuilt">
+			<div panel-tools=""></div>
+			{{ component.typeShort }}
+		</div>
+		<div class="panel-body">
+			<rc-component editor="editor" component="component"></rc-component>
+		</div>
+	</div>
+</div>
+
+<!-- Childs -->
+<div ng-if="element.childs.length">
+	<h5>Childs</h5>
+	<rc-elements-list editor="editor" elements="element.childs"></rc-elements-list>
+</div>

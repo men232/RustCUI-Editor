@@ -1,0 +1,11 @@
+{
+	"envConfig": {},
+	"devServer": {
+		"host": "localhost",
+		"port": 1337,
+		"contentBase": "./public",
+		"historyApiFallback": {
+			"index": "/dist/index.html"
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"name": "RustCUI Editor",
+	"nameHTML": "<b>RustCUI</b> Editor",
+	"version": {
+		"number": 0.01,
+		"state": "pre-aplha"
+	}
+}
