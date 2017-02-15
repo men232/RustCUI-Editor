@@ -1,21 +1,20 @@
 # RustCUI-Editor
 Web editor for cui of rust game.
 
-# Deps
+### Deps
 Need for webpack & webpack-dev-server install as global
 
-`
-sudo npm i webpack -g
-sudo npm i webpac-dev-server -g
-`
+`sudo npm i webpack -g`
+`sudo npm i webpac-dev-server -g`
 
-# Installation
+### Installation
 `npm install`
 
-# Run
+### Run
 `webpack-dev-server`
 
-# Build
+### Build
+Default build result in: ```./dist```
 `webpack`
 
 And open in browser
