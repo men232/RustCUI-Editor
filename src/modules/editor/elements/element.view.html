@@ -1,40 +1,50 @@
-<div class="col-md-12">
-	<button class="btn btn-sm btn-primary" ng-click="util.showAddElement(element)" style="width: 100%">Add Child Element</button>
+<div class="col-md-12 m-b-sm m-t-sm">
+	<button class="btn btn-sm btn-success" ng-click="util.showAddElement(element)" ng-if="element.controls.childs">
+		<li class="fa fa-plus"></li>
+	</button>
+
+	<button class="btn btn-sm btn-{{ element.rect.fillParent ? 'primary' : 'default' }}" ng-click="element.toggleFill()" ng-if="element.controls.fillParent">
+		<li class="fa fa-arrows"></li>
+	</button>
 </div>
 
 <!-- Position -->
-<div class="form-group form-group-sm col-md-6">
-	<label>X</label>
-	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.x">
-</div>
+<div ng-if="element.controls.position">
+	<div class="form-group form-group-sm col-md-6">
+		<label>X</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.x">
+	</div>
 
-<div class="form-group form-group-sm col-md-6">
-	<label>Y</label>
-	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.y">
-</div>
+	<div class="form-group form-group-sm col-md-6">
+		<label>Y</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.y">
+	</div>
 
-<!-- Size -->
-<div class="form-group form-group-sm col-md-6">
-	<label>Width</label>
-	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.width">
-</div>
+	<!-- Size -->
+	<div class="form-group form-group-sm col-md-6">
+		<label>Width</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.width">
+	</div>
 
-<div class="form-group form-group-sm col-md-6">
-	<label>Height</label>
-	<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.height">
+	<div class="form-group form-group-sm col-md-6">
+		<label>Height</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="element.rect.height">
+	</div>
 </div>
 
 <!-- Anchor -->
-<div class="col-md-6 m-b-md">
-	<b>AnchorMin:</b><br>{{ element.rect.anchormin[0] }}, {{ element.rect.anchormin[1] }}
-</div>
-<div class="col-md-6 m-b-md">
-	<b>AnchorMax:</b><br>{{ element.rect.anchormax[0] }}, {{ element.rect.anchormax[1] }}
+<div ng-if="element.controls.anchor">
+	<div class="col-md-6 m-b-md">
+		<b>AnchorMin:</b><br>{{ element.rect.anchormin[0] }}, {{ element.rect.anchormin[1] }}
+	</div>
+	<div class="col-md-6 m-b-md">
+		<b>AnchorMax:</b><br>{{ element.rect.anchormax[0] }}, {{ element.rect.anchormax[1] }}
+	</div>
 </div>
 
 <!-- Components -->
-<div>
-	<h5>Components</h5>
+<div class="m-b-sm">
+	<b>Components</b>
 
 	<div class="hpanel" ng-repeat="component in element.components">
 		<div class="panel-heading hbuilt">
@@ -49,6 +59,6 @@
 
 <!-- Childs -->
 <div ng-if="element.childs.length">
-	<h5>Childs</h5>
+	<b>Childs</b>
 	<rc-elements-list editor="editor" parent="element"></rc-elements-list>
 </div>

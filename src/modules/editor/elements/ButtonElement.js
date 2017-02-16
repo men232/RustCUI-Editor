@@ -1,5 +1,6 @@
 import BaseElement from './BaseElement';
 import ButtonCompontent from '../components/ButtonComponent';
+import LabelElement from '../elements/LabelElement';
 
 class ButtonElement extends BaseElement {
 	constructor(opts) {
@@ -9,6 +10,10 @@ class ButtonElement extends BaseElement {
 		this.title  = 'ButtonElement';
 		this.components = [
 			new ButtonCompontent()
+		];
+
+		this.childs = [
+			new LabelElement()
 		];
 	}
 }

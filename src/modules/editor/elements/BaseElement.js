@@ -9,6 +9,12 @@ class BaseElement {
 		this.components = [];
 		this.rect       = new RectTransformComponent(opts);
 		this.childs     = [];
+		this.controls = {
+			position: true,
+			anchor: true,
+			childs: true,
+			fillParent: true
+		};
 	}
 
 	dispose() {
@@ -21,6 +27,17 @@ class BaseElement {
 		}
 	}
 
+	toggleFill() {
+		this.rect.fillParent = !this.rect.fillParent;
+
+		if (!this.rect.fillParent) {
+			this.rect.width = 100;
+			this.rect.height = 100;
+		}
+
+		this.update();
+	}
+
 	removeChild(index) {
 		if (!this.childs[index]) return;
 
@@ -28,6 +45,21 @@ class BaseElement {
 		this.childs.splice(index, 1);
 
 		this.update();
+	}
+
+	drag(e) {
+		if (this.rect.fillParent && this.parent && !this.parent.isEditor) {
+			this.parent.drag(e);
+		}
+
+		let rect = this.rect;
+
+		rect.x = rect.x + e.movementX;
+		rect.y = rect.y + e.movementY;
+
+		rect.normalizePosition(this.parent.rect);
+		this.parent.update();
+		this.editor.onUpdate();
 	}
 
 	removeComponent(index) {
@@ -38,9 +70,13 @@ class BaseElement {
 		this.update();
 	}
 
+	onUpdate() {}
+
 	update(parent, editor) {
 		this.parent = parent || this.parent;
 		this.editor = editor || this.editor;
+
+		this.onUpdate(this.parent, editor);
 
 		if (this.parent) {
 			this.rect.normalize(this.parent.rect);

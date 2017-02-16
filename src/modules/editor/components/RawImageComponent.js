@@ -8,7 +8,7 @@ class RawImageComponent extends BaseCompontent {
 		this.typeShort = 'RawImage';
 		this.sprite    = 'Assets/Icons/rust.png';
 		this.material  = '';
-		this.url       = 'http://i.imgur.com/ry2Qew9.png';
+		this.url       = 'http://www.rigormortis.be/wp-content/uploads/rust-icon-512.png';
 		this.color     = [255, 255, 255, 255];
 	}
 

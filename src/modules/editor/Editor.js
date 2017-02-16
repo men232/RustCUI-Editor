@@ -2,9 +2,10 @@ import RectTransformComponent from './components/RectTransformComponent';
 
 class Editor {
 	constructor(svg, container) {
-		this.svg = svg;
-		this.container = container;
-		this.background = '#333';
+		this.svg        = svg;
+		this.container  = container;
+		this.background = "url('http://zaka-zaka.com/i/screen/rust_4.jpg')";
+		this.isEditor   = true;
 		this.rect = new RectTransformComponent({
 			x: 0,
 			y: 0,

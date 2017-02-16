@@ -10,6 +10,7 @@ class RectTransformComponent extends BaseCompontent {
 		this.anchormax = [1.0, 1.0];
 		this.offsetmin = [0.0, 0.0];
 		this.offsetmax = [1.0, 1.0];
+		this.fillParent = false;
 
 		// Of parent
 		this.width = 100;
@@ -29,16 +30,12 @@ class RectTransformComponent extends BaseCompontent {
 	}
 
 	normalize(parent) {
-		//let [x, y] = this.toMetricPos(parent);
-
 		// Size
-		//let [width, height] = this.toMetricSize(parent);
-		this.originW = this.width;
-		this.originH = this.height;
+		this.normalizeSize(parent);
 
 		// Position
-		this.normalizeOrigin(parent);
 		this.normalizePosition(parent);
+		this.normalizeOrigin(parent);
 	}
 
 	recalcAnchor(parent) {
@@ -57,12 +54,28 @@ class RectTransformComponent extends BaseCompontent {
 		return {x, y, width, height};
 	}
 
+	normalizeSize(parent) {
+		if (this.fillParent) {
+			this.width = parent.width;
+			this.height = parent.height;
+		}
+
+		this.originW = this.width;
+		this.originH = this.height;
+	}
+
 	normalizeOrigin(parent) {
 		this.originX = toDec(parent.originX + this.x);
 		this.originY = toDec(parent.originY + this.y);
 	}
 
 	normalizePosition(parent) {
+		if (this.fillParent) {
+			this.x = 0;
+			this.y = 0;
+			return;
+		}
+
 		let maxX = parent.width - this.width;
 		let maxY = parent.height - this.height;
 

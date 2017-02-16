@@ -1,3 +1,29 @@
+<!-- Text -->
+<div ng-if="component.typeShort == 'Text'">
+	<div class="form-group form-group-sm col-md-12">
+		<label>Text</label>
+		<input type="text" class="form-control" ng-change="onChange()" ng-model="component.text">
+	</div>
+
+	<div class="form-group form-group-sm col-md-12">
+		<label>Size</label>
+		<input type="number" class="form-control" ng-change="onChange()" ng-model="component.fontSize">
+	</div>
+
+	<div class="form-group form-group-sm col-md-12">
+		<label>Align</label>
+		<select class="form-control" ng-model="component.align" ng-change="onChange()">
+			<option value="UpperLeft">UpperLeft</option>
+			<option value="UpperRight">UpperRight</option>
+			<option value="LowerLeft">LowerLeft</option>
+			<option value="LowerRight">LowerRight</option>
+			<option value="MiddleCenter">MiddleCenter</option>
+			<option value="MiddleLeft">MiddleLeft</option>
+			<option value="MiddleRight">MiddleRight</option>
+		</select>
+	</div>
+</div>
+
 <!-- Color -->
 <div ng-if="component.color">
 	<div class="form-group form-group-sm col-md-12">

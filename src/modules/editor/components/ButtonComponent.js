@@ -10,7 +10,7 @@ class ButtonComponent extends BaseCompontent {
 		this.close     = '';
 		this.sprite    = 'Assets/Content/UI/UI.Background.Tile.psd';
 		this.material  = 'Assets/Icons/IconMaterial.mat';
-		this.color     = [255, 255, 255, 255];
+		this.color     = [78, 78, 78, 255];
 		this.imagetype = 'Simple';
 	}
 }

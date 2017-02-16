@@ -4,6 +4,7 @@ import Snap from 'imports-loader?this=>window,fix=>module.exports=0!../../lib/sn
 import ButtonElement from './elements/ButtonElement';
 import LabelElement from './elements/LabelElement';
 import PanelElement from './elements/PanelElement';
+import ImageElement from './elements/ImageElement';
 
 export function view($scope, $rootScope) {
 	let container = $('#editor-container');
@@ -44,7 +45,13 @@ export function newElement($scope, $uibModalInstance, parent) {
 			case 2:
 				child = new PanelElement();
 				break;
+
+			case 3:
+				child = new ImageElement();
+				break; 
 		}
+
+		if (!child) return;
 
 		parent.childs.push(child);
 		parent.update();

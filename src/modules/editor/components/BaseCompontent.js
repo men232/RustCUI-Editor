@@ -28,14 +28,7 @@ class BaseCompontent {
 		this.svg.init = true;
 
 		this.svg.elem.drag((dx, dy, x, y, e) => {
-			let rect = element.rect;
-
-			rect.x = rect.x + e.movementX;
-			rect.y = rect.y + e.movementY;
-
-			rect.normalizePosition(element.parent.rect);
-			element.update();
-			editor.onUpdate();
+			element.drag(e, this);
 		});
 	}
 
