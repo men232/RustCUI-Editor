@@ -8,6 +8,11 @@
 	</button>
 </div>
 
+<div class="form-group form-group-sm col-md-12">
+	<label>Name</label>
+	<input type="text" class="form-control" ng-change="onChange()" ng-model="element.name">
+</div>
+
 <!-- Position -->
 <div ng-if="element.controls.position">
 	<div class="form-group form-group-sm col-md-6">

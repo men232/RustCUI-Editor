@@ -1,14 +1,13 @@
 import BaseElement from './BaseElement';
-import RawImageComponent from '../components/RawImageComponent';
+import ImageComponent from '../components/ImageComponent';
 
 class PanelElement extends BaseElement {
 	constructor(opts) {
 		super(opts);
 
-		this.parent = 'Hud';
 		this.title  = 'PanelElement';
 		this.components = [
-			new RawImageComponent()
+			new ImageComponent()
 		];
 	}
 }

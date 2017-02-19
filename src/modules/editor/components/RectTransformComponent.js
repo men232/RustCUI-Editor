@@ -29,6 +29,14 @@ class RectTransformComponent extends BaseCompontent {
 		}
 	}
 
+	toJSON() {
+		return {
+			type: this.type,
+			anchormin: this.anchormin.join(' '),
+			anchormax: this.anchormax.join(' '),
+		};
+	}
+
 	normalize(parent) {
 		// Size
 		this.normalizeSize(parent);

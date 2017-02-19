@@ -1,8 +1,9 @@
+import guid from '../../../lib/guid';
 import RectTransformComponent from '../components/RectTransformComponent';
 
 class BaseElement {
 	constructor(opts) {
-		this.name       = '#Element';
+		this.name       = '';
 		this.title      = 'BaseElement';
 		this.parent     = null;
 		this.editor     = null;
@@ -24,6 +25,33 @@ class BaseElement {
 
 		for (let i = 0; i < this.childs.length; i++) {
 			this.childs[i].dispose();
+		}
+	}
+
+	toJSON(list) {
+		let parent = 'Hud';
+		let components = [];
+
+		if (this.parent && !this.parent.isEditor) {
+			parent = this.parent.name;
+		}
+
+		for (var i = 0; i < this.components.length; i++) {
+			components.push(this.components[i].toJSON());
+		}
+
+		components.push(this.rect.toJSON());
+
+		let data = {
+			name: this.name,
+			parent,
+			components
+		};
+
+		list.push(data);
+
+		for (var i = 0; i < this.childs.length; i++) {
+			this.childs[i].toJSON(list);
 		}
 	}
 
@@ -73,6 +101,10 @@ class BaseElement {
 	onUpdate() {}
 
 	update(parent, editor) {
+		if (this.name === '') {
+			this.name = guid();
+		}
+
 		this.parent = parent || this.parent;
 		this.editor = editor || this.editor;
 

@@ -11,3 +11,15 @@ export function showAddElement(parent) {
 		}
 	});
 }
+
+export function showExport(editor) {
+	let $uibModal = $require('$uibModal');
+
+	return $uibModal.open({
+		templateUrl: 'editor.export.html',
+		controller: controller.exportData,
+		resolve: {
+			editor: () => editor
+		}
+	});
+}

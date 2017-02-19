@@ -5,7 +5,6 @@ class LabelElement extends BaseElement {
 	constructor(opts = {}) {
 		super(opts);
 
-		this.parent = 'Hud';
 		this.title  = 'LabelElement';
 		this.components = [
 			new TextComponent()
@@ -18,7 +17,7 @@ class LabelElement extends BaseElement {
 	onUpdate(parent) {
 		if (!parent.isEditor) {
 			this.rect.fillParent = true;
-			this.controls.size = false;
+			this.controls.position = false;
 		}
 	}
 }

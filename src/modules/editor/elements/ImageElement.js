@@ -5,7 +5,6 @@ class ImageElement extends BaseElement {
 	constructor(opts) {
 		super(opts);
 
-		this.parent = 'Hud';
 		this.title  = 'ImageElement';
 		this.components = [
 			new RawImageComponent()

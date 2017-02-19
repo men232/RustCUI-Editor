@@ -13,6 +13,16 @@ class TextComponent extends BaseCompontent {
 		this.color    = [255, 255, 255, 255];
 	}
 
+	toJSON() {
+		return {
+			type: this.type,
+			color: this.toRAWColor(this.color),
+			fontSize: this.fontSize,
+			align: this.align,
+			align: this.align,
+		};
+	}
+
 	createSvgElement(editor) {
 		return editor.svg.text(0, 0, this.text);
 	}
@@ -47,13 +57,13 @@ class TextComponent extends BaseCompontent {
 			x += rect.width - box.width;
 			y = rect.height + rect.originY;
 		} else if (this.align === 'MiddleCenter') {
-			x += (rect.width / 2) - (box.width / 2);
-			y += (rect.height / 2) - (box.height / 2);
+			x += (rect.width - box.width) * 0.5;
+			y += (rect.height * 0.5) - box.height * 0.6;
 		} else if (this.align === 'MiddleLeft') {
-			y += (rect.height / 2) - (box.height / 2);
+			y += (rect.height * 0.5) - box.height * 0.6;
 		} else if (this.align === 'MiddleRight') {
 			x += rect.width - box.width;
-			y += (rect.height / 2) - (box.height / 2);
+			y += (rect.height * 0.5) - box.height * 0.6;
 		}
 
 		this.svg.elem.attr({x, y});

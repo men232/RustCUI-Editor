@@ -55,6 +55,16 @@ class Editor {
 
 		this.onUpdate();
 	}
+
+	toJSON() {
+		let result = [];
+
+		for (var i = 0; i < this.childs.length; i++) {
+			this.childs[i].toJSON(result);
+		}
+
+		return result;
+	}
 }
 
 export default Editor;

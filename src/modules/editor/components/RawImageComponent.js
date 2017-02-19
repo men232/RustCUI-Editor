@@ -12,6 +12,14 @@ class RawImageComponent extends BaseCompontent {
 		this.color     = [255, 255, 255, 255];
 	}
 
+	toJSON() {
+		return {
+			type: this.type,
+			color: this.toRAWColor(this.color),
+			url: this.url,
+		};
+	}
+
 	createSvgElement(editor) {
 		return editor.svg.image(this.url, 0, 0, 50, 50);
 	}

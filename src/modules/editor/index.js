@@ -23,6 +23,7 @@ function fn($stateProvider) {
 				return $q((resolve) => {
 					require.ensure([], () =>  {
 						$templateCache.put('editor.sidebar.html', require('./editor.sidebar.html'));
+						$templateCache.put('editor.export.html', require('./editor.export.html'));
 						$templateCache.put('element.view.html', require('./elements/element.view.html'));
 						$templateCache.put('element.new.html', require('./elements/element.new.html'));
 						$templateCache.put('elements.list.html', require('./elements/elements.list.html'));

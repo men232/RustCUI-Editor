@@ -1,3 +1,5 @@
+import RectTransformComponent from './RectTransformComponent';
+
 class BaseCompontent {
 	constructor() {
 		this.element = null;
@@ -15,6 +17,11 @@ class BaseCompontent {
 		}
 
 		return `rgb(${arr.join(',')})`;
+	}
+
+	toRAWColor(arr) {
+		let res = arr.map(v => RectTransformComponent.toDec(v / 255));
+		return res.join(' ');
 	}
 
 	createSvgElement(editor) {

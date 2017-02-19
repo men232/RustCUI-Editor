@@ -17,6 +17,13 @@ export function view($scope, $rootScope) {
 	});
 }
 
+export function exportData($scope, $uibModalInstance, editor) {
+	// Export to scope interface
+	$scope.close = $uibModalInstance.close.bind($uibModalInstance);
+
+	$scope.result = editor.toJSON();
+}
+
 export function newElement($scope, $uibModalInstance, parent) {
 	// Export to scope interface
 	$scope.close = $uibModalInstance.close.bind($uibModalInstance);

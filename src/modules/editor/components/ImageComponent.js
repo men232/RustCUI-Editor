@@ -11,6 +11,13 @@ class ImageComponent extends BaseCompontent {
 		this.color     = [255, 255, 255, 255];
 		this.imagetype = 'Simple';
 	}
+
+	toJSON() {
+		return {
+			type: this.type,
+			color: this.toRAWColor(this.color),
+		};
+	}
 }
 
 export default ImageComponent;

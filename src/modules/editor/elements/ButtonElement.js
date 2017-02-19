@@ -6,7 +6,6 @@ class ButtonElement extends BaseElement {
 	constructor(opts) {
 		super(opts);
 
-		this.parent = 'Hud';
 		this.title  = 'ButtonElement';
 		this.components = [
 			new ButtonCompontent()

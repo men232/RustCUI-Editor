@@ -13,6 +13,15 @@ class ButtonComponent extends BaseCompontent {
 		this.color     = [78, 78, 78, 255];
 		this.imagetype = 'Simple';
 	}
+
+	toJSON() {
+		return {
+			type: this.type,
+			command: this.command,
+			close: this.close,
+			color: this.toRAWColor(this.color),
+		};
+	}
 }
 
 export default ButtonComponent;
