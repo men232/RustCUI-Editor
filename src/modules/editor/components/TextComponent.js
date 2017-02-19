@@ -45,6 +45,11 @@ class TextComponent extends BaseCompontent {
 		let rect = this.getRect();
 		let box = this.svg.elem.getBBox();
 
+		if (!rect.fillParent) {
+			rect.width = Math.ceil(box.width);
+			rect.height = Math.ceil(box.height);
+		}
+
 		// UpperLeft
 		let x = rect.originX;
 		let y = box.height + rect.originY;

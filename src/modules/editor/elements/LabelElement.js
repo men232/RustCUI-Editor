@@ -12,10 +12,11 @@ class LabelElement extends BaseElement {
 
 		this.controls.childs     = false;
 		this.controls.fillParent = false;
+		this.controls.size = false;
 	}
 
 	onUpdate(parent) {
-		if (!parent.isEditor) {
+		if (parent.title === 'ButtonElement') {
 			this.rect.fillParent = true;
 			this.controls.position = false;
 		}

@@ -11,6 +11,7 @@ class BaseElement {
 		this.rect       = new RectTransformComponent(opts);
 		this.childs     = [];
 		this.controls = {
+			size: true,
 			position: true,
 			anchor: true,
 			childs: true,
