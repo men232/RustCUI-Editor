@@ -64,7 +64,7 @@ const opts = {
 	}
 };
 
-if (NODE_ENV == 'dev') {
+if (NODE_ENV == 'prod') {
 	opts.plugins.push(
 		new webpack.optimize.CommonsChunkPlugin({
 			children: true,
