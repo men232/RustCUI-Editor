@@ -6,6 +6,7 @@ import LabelElement from './elements/LabelElement';
 import PanelElement from './elements/PanelElement';
 import ImageElement from './elements/ImageElement';
 
+/*@ngInject*/
 export function view($scope, $rootScope) {
 	let container = $('#editor-container');
 	let svg = Snap('#editor');
@@ -17,6 +18,7 @@ export function view($scope, $rootScope) {
 	});
 }
 
+/*@ngInject*/
 export function exportData($scope, $uibModalInstance, editor) {
 	// Export to scope interface
 	$scope.close = $uibModalInstance.close.bind($uibModalInstance);
@@ -24,6 +26,7 @@ export function exportData($scope, $uibModalInstance, editor) {
 	$scope.result = editor.toJSON();
 }
 
+/*@ngInject*/
 export function newElement($scope, $uibModalInstance, parent) {
 	// Export to scope interface
 	$scope.close = $uibModalInstance.close.bind($uibModalInstance);
